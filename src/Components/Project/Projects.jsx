@@ -10,6 +10,7 @@ const Projects = () => {
       transition: { yoyo: Infinity, duration: 0.3 },
     },
   };
+
   return (
     <div className="pb-4 bg-[#000000]">
       <motion.h2
@@ -33,18 +34,35 @@ const Projects = () => {
             key={index}
             className="mb-12 flex max-md:flex-col lg:flex-row items-center lg:items-start lg:justify-between max-md:px-2"
           >
+            {/* Image with GitHub Button on Hover */}
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: -100 }}
               transition={{ duration: 1 }}
-              className="w-full lg:w-1/2 flex justify-center items-center mb-6 lg:mb-0"
+              className="w-full lg:w-1/2 flex justify-center items-center mb-6 lg:mb-0 relative"
             >
               <img
                 src={project.image}
                 alt={project.title}
                 className="rounded-lg w-full max-w-[600px] lg:max-w-[450px] h-auto border-4 border-white"
               />
+              {/* GitHub Button (Appears on Hover) */}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300"
+              >
+                <motion.button
+                  className="px-4 py-2 text-white bg-yellow-400 font-semibold uppercase tracking-widest rounded hover:bg-yellow-500 transition-all"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  View on GitHub
+                </motion.button>
+              </a>
             </motion.div>
+
+            {/* Project Details */}
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
               initial={{ opacity: 0, x: 100 }}
@@ -79,6 +97,7 @@ const Projects = () => {
                 ))}
               </div>
 
+              {/* View Demo Button */}
               <div className="mt-4">
                 <a
                   href={project.liveDemoLink}
