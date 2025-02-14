@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import logo from "../../assets/logo.png";
 
 const navitems = [
   { text: "Home", name: "hero" },
@@ -51,7 +51,7 @@ const NavBar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -68,11 +68,13 @@ const NavBar = () => {
       >
         {/* Close Button */}
         <div className="flex justify-end p-5">
-          <button onClick={toggleSidebar} className="text-white text-2xl">✕</button>
+          <button onClick={toggleSidebar} className="text-white text-2xl">
+            ✕
+          </button>
         </div>
 
         {/* Sidebar Navigation */}
-        <div className="flex flex-col items-center space-y-6 mt-10">
+        <div className="flex flex-col items-center px-2 space-y-6 mt-10">
           {navitems.map((item, index) => (
             <motion.div
               key={index}
@@ -105,7 +107,11 @@ const NavBar = () => {
           animate={{ x: 0 }}
           transition={{ type: "spring", stiffness: 120, damping: 20 }}
         >
-          <h2 className="text-2xl font-semibold text-white">Portfolio</h2>
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-24 h-24 sm:w-12 sm:h-12 lg:w-28 lg:h-28" // Adjusted size for mobile, default, and large screens
+          />
         </motion.div>
 
         {/* Navigation Links for Larger Screens */}
@@ -115,7 +121,9 @@ const NavBar = () => {
               key={index}
               onClick={() => handleScrollTo(item.name)}
               className={`font-serif text-white px-3 py-1 cursor-pointer transition-all ${
-                activeSection === item.name ? "text-[#F8C000] font-bold border-b-2 border-[#F8C000]" : "hover:text-[#F8C000]"
+                activeSection === item.name
+                  ? "text-[#F8C000] font-bold border-b-2 border-[#F8C000]"
+                  : "hover:text-[#F8C000]"
               }`}
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
@@ -126,7 +134,10 @@ const NavBar = () => {
         </div>
 
         {/* Toggle Button for Mobile Screens */}
-        <button className="lg:hidden text-white text-2xl" onClick={toggleSidebar}>
+        <button
+          className="lg:hidden text-white text-2xl"
+          onClick={toggleSidebar}
+        >
           ☰
         </button>
       </motion.div>

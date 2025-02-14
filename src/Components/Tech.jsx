@@ -1,8 +1,10 @@
-
 import React from "react";
 import { FaReact, FaJsSquare, FaNodeJs, FaFigma } from "react-icons/fa";
 import { SiMongodb, SiExpress } from "react-icons/si";
 import { motion } from "framer-motion";
+import { BsBootstrap } from "react-icons/bs"; // Bootstrap Icon
+import { AiOutlineAntDesign } from "react-icons/ai"; // TailwindCSS (Ant Design Icon)
+import { GitHub } from "@mui/icons-material"; // Material UI Icon (GitHub)
 
 const Technologies = () => {
   const iconVariants = (duration) => ({
@@ -43,6 +45,7 @@ const Technologies = () => {
         transition={{ duration: 1.5 }}
         className="flex justify-center gap-6 flex-wrap"
       >
+        {/* React */}
         <motion.div
           variants={iconVariants(2.5)}
           initial="initial"
@@ -53,6 +56,7 @@ const Technologies = () => {
           <p className="text-sm font-medium text-gray-800 mt-2">React</p>
         </motion.div>
 
+        {/* JavaScript */}
         <motion.div
           variants={iconVariants(3)}
           initial="initial"
@@ -63,6 +67,7 @@ const Technologies = () => {
           <p className="text-sm font-medium text-gray-800 mt-2">JavaScript</p>
         </motion.div>
 
+        {/* Express.js */}
         <motion.div
           variants={iconVariants(2.8)}
           initial="initial"
@@ -73,6 +78,7 @@ const Technologies = () => {
           <p className="text-sm font-medium text-gray-800 mt-2">Express.js</p>
         </motion.div>
 
+        {/* Node.js */}
         <motion.div
           variants={iconVariants(2.3)}
           initial="initial"
@@ -83,16 +89,18 @@ const Technologies = () => {
           <p className="text-sm font-medium text-gray-800 mt-2">Node.js</p>
         </motion.div>
 
+        {/* MongoDB */}
         <motion.div
           variants={iconVariants(3.2)}
           initial="initial"
           animate="animate"
-          className="flex flex-col items-center justify-center border-2 border-yellow-400 shadow shadow-gray-200 rounded-lg  p-4 w-28 h-28"
+          className="flex flex-col items-center justify-center border-2 border-yellow-400 shadow shadow-gray-200 rounded-lg p-4 w-28 h-28"
         >
           <SiMongodb className="text-green-600 text-5xl" />
           <p className="text-sm font-medium text-gray-800 mt-2">MongoDB</p>
         </motion.div>
 
+        {/* Figma */}
         <motion.div
           variants={iconVariants(2.7)}
           initial="initial"
@@ -101,6 +109,39 @@ const Technologies = () => {
         >
           <FaFigma className="text-purple-500 text-5xl" />
           <p className="text-sm font-medium text-gray-800 mt-2">Figma</p>
+        </motion.div>
+
+        {/* Bootstrap */}
+        <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="flex flex-col items-center justify-center border-2 border-yellow-400 shadow shadow-gray-200 rounded-lg p-4 w-28 h-28"
+        >
+          <BsBootstrap className="text-primary text-5xl" />
+          <p className="text-sm font-medium text-gray-800 mt-2">Bootstrap</p>
+        </motion.div>
+
+        {/* TailwindCSS */}
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="flex flex-col items-center justify-center border-2 border-yellow-400 shadow shadow-gray-200 rounded-lg p-4 w-28 h-28"
+        >
+          <AiOutlineAntDesign className="text-teal-500 text-5xl" />
+          <p className="text-sm font-medium text-gray-800 mt-2">TailwindCSS</p>
+        </motion.div>
+
+        {/* Material UI */}
+        <motion.div
+          variants={iconVariants(2.8)}
+          initial="initial"
+          animate="animate"
+          className="flex flex-col items-center justify-center border-2 border-yellow-400 shadow shadow-gray-200 rounded-lg p-4 w-28 h-28"
+        >
+          <GitHub className="text-white text-5xl" /> {/* Replace this with your desired MUI icon */}
+          <p className="text-sm font-medium text-gray-800 mt-2">GitHub</p>
         </motion.div>
       </motion.div>
     </div>

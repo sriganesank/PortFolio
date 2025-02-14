@@ -1,8 +1,11 @@
-import React from "react";
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaEnvelope, FaGithub, FaLinkedin, FaTimes } from "react-icons/fa"; // Add FaTimes for the close icon
 import { motion } from "framer-motion";
+import Resume from "../assets/Screenshot 2025-02-14 083246.png";
 
 const About = () => {
+  const [showResume, setShowResume] = useState(false);
+
   const buttonVariant = {
     hover: {
       scale: 1.05,
@@ -10,6 +13,7 @@ const About = () => {
       transition: { yoyo: Infinity, duration: 0.3 },
     },
   };
+
   return (
     <>
       <section className="w-full min-h-screen bg-black flex flex-col max-lg:gap-7 pt-9 lg:flex-row items-center max-md:justify-evenly md:pt-28 max-md:pt-20 px-6 lg:px-16">
@@ -36,7 +40,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
           ></motion.div>
 
-          {/* Image */}
+          {/* Profile Image */}
           <motion.img
             src="https://hellloexpert.com/tf/html/amee/img/about/1.jpg"
             alt="Profile"
@@ -49,7 +53,7 @@ const About = () => {
 
         {/* Text Section */}
         <motion.div
-          className="w-full lg:w-1/2 flex flex-col items-center  lg:items-start  text-white"
+          className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-white"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -75,8 +79,8 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Hey there!  I'm Sri Ganesan , a Full-stack developer with a strong
-            foundation in web Devlopment. , I specialize in technologies like
+            Hey there! I'm Sri Ganesan, a Full-stack developer with a strong
+            foundation in web development. I specialize in technologies like
             React, Node.js, Express, and MongoDB. I build efficient,
             user-friendly solutions with expertise in both front-end and
             back-end development.
@@ -91,17 +95,44 @@ const About = () => {
             I craft intuitive UIs with React and optimize back-end services
             using Node.js. I’m always eager to explore new technologies and
             adapt to emerging trends. Let’s collaborate to create scalable,
-            innovative solutions. Ready for the journey
+            innovative solutions. Ready for the journey?
           </motion.p>
 
+        
+          {/* View Resume Button */}
           <motion.button
             className="group relative px-4 sm:px-6 py-2 text-yellow-400 border border-yellow-400 uppercase tracking-widest hover:bg-yellow-400 hover:text-black transition-all"
             variants={buttonVariant}
             whileHover="hover"
+            onClick={() => setShowResume(!showResume)}
           >
-            View Resume
-            <span className="absolute top-1/2 left-12 sm:left-48 w-[30px] sm:w-[50px] h-[2px] bg-white transform -translate-y-1/2 -translate-x-full transition-all duration-300 group-hover:translate-x-4"></span>
+            See Resume
+            <span className="absolute top-1/2 left-[180px] sm:left-[200px] w-[40px] sm:w-[50px] h-[2px] bg-white transform -translate-y-1/2 -translate-x-full transition-all duration-300 group-hover:translate-x-1"></span>
           </motion.button>
+
+          {/* Resume Image Display */}
+          {showResume && (
+            <motion.div
+              className="mt-6 flex justify-center items-center fixed inset-0 bg-black bg-opacity-80 z-50"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Close Button */}
+              <motion.div
+                className="absolute top-4 right-10 text-white text-2xl cursor-pointer"
+                onClick={() => setShowResume(false)}
+              >
+                <FaTimes />
+              </motion.div>
+
+              <img
+                src={Resume} // Replace this with the actual resume image URL
+                alt="Resume"
+                className="w-full max-w-lg border-2 border-yellow-400 shadow-lg rounded-lg"
+              />
+            </motion.div>
+          )}
         </motion.div>
       </section>
     </>

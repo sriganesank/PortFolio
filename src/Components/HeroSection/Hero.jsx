@@ -61,8 +61,8 @@ const Hero = () => {
           </motion.span>
         </h2>
         <h4 className="text-base sm:text-lg lg:text-xl text-white">
-          And I am a{" "}
-          <b className="text-yellow-400 text-lg sm:text-xl lg:text-2xl px-3">
+          And I am a
+          <b className="text-yellow-400 text-lg sm:text-sm lg:text-2xl px-1">
             <Typewriter
               words={[
                 "Frontend Developer",
@@ -89,8 +89,8 @@ const Hero = () => {
           onClick={() => handleScrollTo("about")} // Scroll to 'about' section
         >
           see more
-          <span className="absolute top-1/2 left-32 sm:left-44 w-[30px] sm:w-[50px] h-[2px] bg-white transform -translate-y-1/2 -translate-x-full transition-all duration-300 group-hover:translate-x-1"></span>
-        </motion.button>
+          <span className="absolute top-1/2 left-40 sm:left-44 w-[45px] sm:w-[50px] h-[2px] bg-white transform -translate-y-1/2 -translate-x-full transition-all duration-300 group-hover:translate-x-1"></span>
+          </motion.button>
       </motion.div>
 
       <motion.div

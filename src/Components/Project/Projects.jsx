@@ -108,10 +108,11 @@ const Projects = () => {
                     className="group relative px-4 sm:px-6 py-2 text-yellow-400 border border-yellow-400 uppercase tracking-widest hover:bg-yellow-400 hover:text-black transition-all"
                     variants={buttonVariant}
                     whileHover="hover"
+                    onClick={() => handleScrollTo("about")} // Scroll to 'about' section
                   >
-                    View Demo
-                    <span className="absolute top-1/2 left-12 sm:left-48 w-[30px] sm:w-[50px] h-[2px] bg-white transform -translate-y-1/2 -translate-x-full transition-all duration-300 group-hover:translate-x-1"></span>
-                  </motion.button>
+                    See Demo
+                    <span className="absolute top-1/2 left-40 sm:left-44 w-[45px] sm:w-[50px] h-[2px] bg-white transform -translate-y-1/2 -translate-x-full transition-all duration-300 group-hover:translate-x-1"></span>
+                    </motion.button>
                 </a>
               </div>
             </motion.div>

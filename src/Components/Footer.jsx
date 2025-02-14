@@ -1,6 +1,7 @@
 import React from "react";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
@@ -13,7 +14,11 @@ const Footer = () => {
           transition={{ duration: 1 }}
           className="mb-4 md:mb-0"
         >
-          <h2 className="text-2xl font-semibold text-white">PortFolio</h2>
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-24 h-24 sm:w-12 sm:h-12 lg:w-28 lg:h-28" // Adjusted size for mobile, default, and large screens
+          />
         </motion.div>
 
         {/* Social Media Links */}
@@ -36,7 +41,7 @@ const Footer = () => {
               <FaLinkedin className="text-3xl" />
             </motion.a>
           </motion.div>
-          
+
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
@@ -81,7 +86,7 @@ const Footer = () => {
           transition={{ duration: 1 }}
           className="mt-6 md:mt-0 text-center text-sm text-gray-400"
         >
-          <p>© 2025 PortFolio. All rights reserved.</p>
+          <p>© 2025 Sri Ganesan All rights reserved.</p>
         </motion.div>
       </div>
     </div>
