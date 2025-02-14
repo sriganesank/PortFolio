@@ -54,7 +54,7 @@ const Projects = () => {
                 className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity duration-300"
               >
                 <motion.button
-                  className="px-4 py-2 text-white bg-yellow-400 font-semibold uppercase tracking-widest rounded hover:bg-yellow-500 transition-all"
+                  className="px-4 py-2 text-white border border-yellow-500 font-medium tracking-widest rounded hover:border-yellow-500 transition-all"
                   whileHover={{ scale: 1.1 }}
                 >
                   View on GitHub
